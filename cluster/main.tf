@@ -1,3 +1,7 @@
+terraform {
+    required_version = ">=0.12"
+}
+
 resource "aws_iam_role" "cluster_role" {
   name = "eks-cluster-role"
 
