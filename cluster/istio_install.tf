@@ -9,7 +9,7 @@ resource "null_resource" "install_istio" {
     command = "istioctl install -f \"istio-operator.yaml\" --kubeconfig /root/.kube/config -y"
   }
   depends_on = [  
-      time_sleep.wait_30_seconds,
+      time_sleep.wait_90_seconds,
       aws_eks_cluster.istio-cluster,
       aws_eks_node_group.demo
   ]
