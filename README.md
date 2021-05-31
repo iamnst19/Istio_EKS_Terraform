@@ -5,7 +5,7 @@ In this project we will be setting up an EKS cluster from sratch, install Istio 
 
 ## About Istio:
 Istio is an open source service mesh that layers transparently onto existing distributed applications. Istio’s powerful features provide a uniform and more efficient way to secure, connect, and monitor services. Istio is the path to load balancing, service-to-service authentication, and monitoring – with few or no service code changes.
-
+			![istio-architechture](https://istio.io/latest/docs/ops/deployment/architecture/arch.svg)
 To know more on the terminologies related to the technology, capabilities, design and architechture plese read the references below. 
 ### Reference:
 - https://istio.io/latest/about/service-mesh/
