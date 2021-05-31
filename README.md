@@ -14,11 +14,13 @@ In this project we will be setting up an EKS cluster from sratch, install Istio 
 
 ## Reference Links for the setup: 
 
-	### Resource Reference:
+### Resource Reference:
 
+        - https://istio.io/latest/docs/ops/deployment/architecture/
+        - https://istio.io/latest/docs/setup/install/operator/
 		- https://istio.io/latest/docs/setup/getting-started/
 
-		- https://istio.io/latest/docs/setup/getting-started/#download
+		
 
 
 
