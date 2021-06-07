@@ -28,7 +28,7 @@ spec:
   http:
   - match:
     - uri:
-        exact: /kiali
+        prefix: /kiali/
     route:
     - destination:
         host: kiali.istio-system.svc.cluster.local
