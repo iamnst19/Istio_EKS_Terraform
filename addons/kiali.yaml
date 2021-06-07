@@ -83,7 +83,7 @@ data:
       image_pull_policy: Always
       image_pull_secrets: []
       image_version: v1.34
-      ingress_enabled: false
+      ingress_enabled: "true"
       logger:
         log_format: text
         log_level: info
@@ -94,7 +94,7 @@ data:
       override_ingress_yaml:
         metadata: {}
       pod_annotations:
-        sidecar.istio.io/inject: "false"
+        sidecar.istio.io/inject: "true"
       pod_labels: {}
       priority_class_name: ""
       replicas: 1
@@ -446,11 +446,9 @@ spec:
   - name: http
     protocol: TCP
     port: 20001
-    nodePort: 31000
   - name: http-metrics
     protocol: TCP
     port: 9090
-  type: NodePort
   selector:
     app.kubernetes.io/name: kiali
     app.kubernetes.io/instance: kiali-server
@@ -498,7 +496,7 @@ spec:
         prometheus.io/scrape: "true"
         prometheus.io/port: "9090"
         kiali.io/runtimes: go,kiali
-        sidecar.istio.io/inject: "false"
+        sidecar.istio.io/inject: "true"
     spec:
       serviceAccountName: kiali
       containers:
