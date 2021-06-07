@@ -6,7 +6,7 @@ resource "time_sleep" "wait_90_seconds" {
 
 resource "null_resource" "install_istio" {
   provisioner "local-exec" {
-    command = "istioctl install --kubeconfig /root/.kube/config -y"
+    command = "istioctl install -f \"istio-operator.yaml\" --kubeconfig /root/.kube/config -y"
   }
   depends_on = [  
       time_sleep.wait_90_seconds,
