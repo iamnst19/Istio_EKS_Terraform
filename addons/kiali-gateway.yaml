@@ -24,7 +24,7 @@ spec:
   hosts:
   - "*"
   gateways:
-  - kiali-gateway
+  - istio-system/kiali-gateway
   http:
   - match:
     - uri:
@@ -44,6 +44,6 @@ spec:
   host: kiali.istio-system.svc.cluster.local
   trafficPolicy:
     tls:
-      mode: SIMPLE
+      mode: DISABLE
 
 ---
