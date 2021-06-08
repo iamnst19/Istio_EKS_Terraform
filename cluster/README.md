@@ -8,4 +8,7 @@ Cluster creation was completed by setting up a simple EC2  bastion host with the
 - terraform binaries
 - kubernetes client (kubectl)
 - istio client (istioctl)
+    - The Istio Client is used to install the operator ymal "istio-operator.yaml"
+    - This will bring up the components such as ISTIOD, INGRESSGATEWAY and EGRESSGATEWAY as deployments 
+    - Furthermore this client can be used as a client to interact with Istio for other operation in this project such as viewing profile, injecting sidecar, producing manifests etc.
 	
