@@ -24,13 +24,15 @@ To expose the Kiali in the istio-system namespace; Istio Gateway (kiali-gateway)
 
 - Kiali annotations are turned to **"true"** for **sidecar injection** that allows envoy proxies. 
 
+```
 pod_annotations:
   sidecar.istio.io/inject: "true"
-
+```
 - The ingress options are also turned **"true"** to allow ingress to the kiali pod.
-   
+
+```   
 ingress_enabled: "true"
-   
+```   
 ## Key Points on Kiali Virtual Services YAML file:
 
 - The Gateway is set so it accepts all traffic at port **80** comining to the ELB. 
