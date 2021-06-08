@@ -4,7 +4,7 @@ For the EKS Cluster setup we are using  terraform scripts to setup the cluster f
 
 Cluster creation was completed by setting up a simple EC2  bastion host with the following binaries installed as a prerequisite, they are:
 
-### Prerequisite before Installing
+### Prerequisite before Installing:
 
 - aws cli
 
