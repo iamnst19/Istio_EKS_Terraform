@@ -1,5 +1,11 @@
 # ADDONS:
 
+## What is Kiali?
+
+Kiali is a management console for an Istio-based service mesh. It provides dashboards, observability, and lets you operate your mesh with robust configuration and validation capabilities. It shows the structure of your service mesh by inferring traffic topology and displays the health of your mesh. Kiali provides detailed metrics, powerful validation, Grafana access, and strong integration for distributed tracing with Jaeger.
+
+## How is Kiali used in this Project?
+
 With the istio-operator profile yaml, the Istio native componets were deployed. Now that its deployed, **Kiali** can be deployed as an addon to the Istio as a service to view the traffic and optionally manage the application deployments in Istio.
 
 To expose the Kiali in the istio-system namespace; Istio Gateway (kiali-gateway), Virtual Services(kiali) and Destination Rules(kiali) were applied.
@@ -8,7 +14,7 @@ To expose the Kiali in the istio-system namespace; Istio Gateway (kiali-gateway)
 
 ### Promentheus Server:
 
-  - Deploy the Prometheus server to allow the scraping of data to be utilized by the kiali server for metric at port '9090'.
+  - Deploy the Prometheus server to allow the scraping of data to be utilized by the kiali server for metrics and visualization at port '9090'.
 ### Kiali Secret:
 
   - The kiali yaml gives the option to set the username and password for Kiali, with the kiali secret.yaml.
@@ -16,9 +22,13 @@ To expose the Kiali in the istio-system namespace; Istio Gateway (kiali-gateway)
 
 ## Key Points on Kiali YAML file to edit before applying: 
 
-- Kiali annotations are turned to **"true"** for **sidecar injection** that allows envoy proxies.
+- Kiali annotations are turned to **"true"** for **sidecar injection** that allows envoy proxies. 
+                        ***pod_annotations:***
+                          ***sidecar.istio.io/inject: "true"***
+
 - The ingress options are also turned **"true"** to allow ingress to the kiali pod.
--   
+                         ***ingress_enabled: "true"***
+   
 ## Key Points on Kiali Virtual Services YAML file:
 
 - The Gateway is set so it accepts all traffic at port **80** comining to the ELB. 
