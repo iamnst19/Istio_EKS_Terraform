@@ -18,8 +18,9 @@ To know more on the terminologies related to the technology, capabilities, desig
 
 - [Setup an EKS Cluster](https://github.com/iamnst19/Istio_EKS_Terraform/tree/main/cluster)
 - [Install Istio in the setup EKS cluster](https://github.com/iamnst19/Istio_EKS_Terraform/tree/main/cluster)
+- [Deploying Addons/Kiali](https://github.com/iamnst19/Istio_EKS_Terraform/tree/main/addons)
 - [Deploy the sample BookInfo App](https://github.com/iamnst19/Istio_EKS_Terraform/blob/237da20bec7cb714603e1f535f71befbe3a5a73c/sample-app)
-- Manage Traffic for the App using Istio
+- [Testing mTLS](https://github.com/iamnst19/Istio_EKS_Terraform/tree/main/mtls)
 
 
 		
