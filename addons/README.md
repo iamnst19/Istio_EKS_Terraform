@@ -10,7 +10,7 @@ With the istio-operator profile yaml, the Istio native componets were deployed. 
 
 To expose the Kiali in the istio-system namespace; Istio Gateway (kiali-gateway), Virtual Services(kiali) and Destination Rules(kiali) were applied.
 
-## Prerequisite:
+## Prerequisite for Kiali:
 
 ### Promentheus Server:
 
@@ -20,7 +20,7 @@ To expose the Kiali in the istio-system namespace; Istio Gateway (kiali-gateway)
   - The kiali yaml gives the option to set the username and password for Kiali, with the kiali secret.yaml.
 
 
-## Key Points on Kiali YAML file to edit before applying: 
+### Key Points on Kiali YAML file to edit before applying: 
 
 - Kiali annotations are turned to **"true"** for **sidecar injection** that allows envoy proxies. 
 
@@ -33,8 +33,16 @@ pod_annotations:
 ```   
 ingress_enabled: "true"
 ```   
-## Key Points on Kiali Virtual Services YAML file:
+### Key Points on Kiali Virtual Services YAML file:
 
 - The Gateway is set so it accepts all traffic at port **80** comining to the ELB. 
 - The Virtual service routes the traffic from the Gateway to the the service FQDN of kiali at port **20001**.
 - The Destination rule is set as it **DISABLE** for the TLS traffic. 
+
+## References:
+
+- https://istio.io/latest/blog/2020/addon-rework/
+- https://github.com/istio/istio/blob/release-1.10/samples/addons/kiali.yaml
+- https://github.com/istio/istio/blob/release-1.10/samples/addons/prometheus.yaml
+
+
