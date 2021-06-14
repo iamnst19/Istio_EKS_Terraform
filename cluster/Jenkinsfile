@@ -70,13 +70,32 @@ pipeline {
 					terraform output kubeconfig > $HOME/.kube/config
 				"""
 				sh 'sudo chown $(id -u):$(id -g) $HOME/.kube/config'
-				sleep 30
+				sleep 60
 				sh 'kubectl get nodes'
 				}
 			}
         }
       }
     }
+	stage('Istio Install')
+	  steps{
+		  script{
+			  sh " istioctl install -f \"istio-operator.yaml\" --kubeconfig /root/.kube/config -y"
+		  }
+	  }
+	stage('addons')
+	  steps{
+		  script{
+
+		  }
+	  }
+	stage('Dynatrace')
+	  steps{
+		  script{
+			  
+		  }
+	  }
+
     stage('TF Destroy') {
       when {
         expression { params.action == 'destroy' }
@@ -93,6 +112,14 @@ pipeline {
 			}
         }
       }
+    }
+  }
+  post {
+    success {
+      mail to: "iamnst19@gmail.com", subject:"SUCCESS: ${currentBuild.fullDisplayName}", body: "Yay, the script was successfull."
+    }
+    failure {
+      mail to: "iamnst19gmail.com", subject:"FAILURE: ${currentBuild.fullDisplayName}", body: "Boo, the script failed."
     }
   }
 }

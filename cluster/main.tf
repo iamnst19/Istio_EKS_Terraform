@@ -50,7 +50,7 @@ resource "aws_security_group" "demo-cluster" {
 resource "aws_eks_cluster" "demo" {
   name     = var.cluster-name
   version = var.k8s_version
-  role_arn = aws_iam_role.cluster_role.arn
+  role_arn = aws_iam_role.demo-cluster.arn
   vpc_config {
     subnet_ids = aws_subnet.demo[*].id
   }
@@ -62,10 +62,10 @@ resource "aws_eks_cluster" "demo" {
 }
 
 output "endpoint" {
-  value = aws_eks_cluster.eks.endpoint
+  value = aws_eks_cluster.demo.endpoint
 }
 
 output "kubeconfig-certificate-authority-data" {
-  value = aws_eks_cluster.eks.certificate_authority[0].data
+  value = aws_eks_cluster.demo.certificate_authority[0].data
 }
 
