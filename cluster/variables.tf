@@ -1,4 +1,7 @@
-variable "clustername" {}
-variable "subnet" {
-    type = list
+#
+# Variables Configuration
+#
+
+variable "cluster-name" {
+  description = "eks cluster name"
 }
