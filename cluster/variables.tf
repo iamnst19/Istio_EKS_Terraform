@@ -10,7 +10,7 @@ variable "cluster-name" {
   default     = "demo"
   type        = string
 }
-}
+
 
 variable "num-workers" {
   description = "Number of eks worker instances to deploy."
