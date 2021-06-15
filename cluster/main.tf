@@ -32,27 +32,12 @@ resource "aws_iam_role_policy_attachment" "demo-cluster-AmazonEKSVPCResourceCont
 }
 
 # adding security group
-resource "aws_security_group" "demo-cluster" {
-  name        = "terraform-eks-demo-cluster"
-  description = "Cluster communication with worker nodes"
-  vpc_id      = aws_vpc.demo.id
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  tags = {
-    Name = "eks-demo"
-  }
-}
 resource "aws_eks_cluster" "demo" {
   name     = var.cluster-name
   version = var.k8s_version
   role_arn = aws_iam_role.demo-cluster.arn
   vpc_config {
-    subnet_ids = aws_subnet.demo[*].id
+    subnet_ids = var.subnet
   }
 
   depends_on = [

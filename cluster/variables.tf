@@ -3,7 +3,12 @@
 
 variable "aws_region" {
   description = "The AWS region to create things in."
-  default     = "eu-west-1"
+  default     = "eu-east-1"
+}
+
+variable "subnet" {
+  description = "list of subnets"
+  default = []
 }
 variable "cluster-name" {
   description = "eks cluster name"
