@@ -22,13 +22,28 @@ Cluster creation was completed by setting up a simple EC2  bastion host with the
 
 - istio client (istioctl)
 
-    - The Istio Client is used to install the profile inoperator ymal "istio-operator.yaml"
+    - The Istio Client is used to install the profile inoperator ymal "istio-operator.yaml"/demo profile
+    ```
+    istioctl install --set profile=demo
+    ```
 
-    - This will bring up the components such as ISTIOD, INGRESSGATEWAY and EGRESSGATEWAY kubernetes objects. 
+    - This will bring up the components such as ISTIOD, INGRESSGATEWAY kubernetes objects. 
 
     - Furthermore this client can be used as a client to interact with Istio for other operations in this project   such as for viewing the profile dump, injecting sidecar, producing manifests etc. or any other istio activites. 
+    
+    - To collect the profile for fine tuning use the command.
+    ```
+    istioctl profile dump
+    ``
+    - To fine tune as kubernetes native objects like CRD's, use the command:
+    ```
+    istioctl manifest generate > $HOME/generated-manifest.yaml
+    ```
 
 ## Jenkinsfile:
 
-The jenkinsfile is written in a declarative way, divided into various stages, that fulfills the requirement. 
+The jenkinsfile is written in a declarative way, divided into various stages, that fulfills the requirement.
+
+## Reference:
+- https://istio.io/latest/docs/setup/install/istioctl/
 	
