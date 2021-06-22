@@ -2,7 +2,8 @@
 
 ## What is Mutual TLS?
 
-## How it works?
+Mutual authentication or two-way authentication refers to two parties authenticating each other at the same time in an authentication protocol. It is a default mode of authentication in some protocols and optional in others
+
 
 ## Demo Setup:
 
