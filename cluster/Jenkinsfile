@@ -157,7 +157,7 @@ pipeline {
       }
 	  steps{
 		script{
-		dir('cluster') {
+		dir('addons') {
 		  withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', 
           credentialsId: 'AWS_Credentials', 
           accessKeyVariable: 'AWS_ACCESS_KEY_ID',  
@@ -180,7 +180,7 @@ pipeline {
       }
 	  steps{
 		script{
-		dir('cluster') {
+		dir('addons') {
 		  withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', 
           credentialsId: 'AWS_Credentials', 
           accessKeyVariable: 'AWS_ACCESS_KEY_ID',  
@@ -200,7 +200,7 @@ pipeline {
        }
 	  steps{
 		script{
-		dir('cluster') {
+		dir('sample-app') {
 		  withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', 
           credentialsId: 'AWS_Credentials', 
           accessKeyVariable: 'AWS_ACCESS_KEY_ID',  
@@ -221,7 +221,7 @@ pipeline {
       }
 	  steps{
 		script{
-		dir('cluster') {
+		dir('sample-app') {
 		  withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', 
           credentialsId: 'AWS_Credentials', 
           accessKeyVariable: 'AWS_ACCESS_KEY_ID',  
@@ -254,7 +254,7 @@ pipeline {
   }
   post {
         always {
-            emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
+            emailext body: 'Your Build is successful', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Build Status'
         }
     }
 }
