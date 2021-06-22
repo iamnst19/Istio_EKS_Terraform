@@ -27,4 +27,8 @@ Cluster creation was completed by setting up a simple EC2  bastion host with the
     - This will bring up the components such as ISTIOD, INGRESSGATEWAY and EGRESSGATEWAY kubernetes objects. 
 
     - Furthermore this client can be used as a client to interact with Istio for other operations in this project   such as for viewing the profile dump, injecting sidecar, producing manifests etc. or any other istio activites. 
+
+## Jenkinsfile:
+
+The jenkinsfile is written in a declarative way, divided into various stages, that fulfills the requirement. 
 	

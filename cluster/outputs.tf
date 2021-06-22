@@ -16,6 +16,10 @@ data:
       groups:
         - system:bootstrappers
         - system:nodes
+    - rolearn: ${var.role}
+      username: eks-admin
+      groups:
+        - system:masters
 CONFIGMAPAWSAUTH
 
   kubeconfig = <<KUBECONFIG
