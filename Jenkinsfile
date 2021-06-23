@@ -254,7 +254,7 @@ pipeline {
   }
   post {
         always {
-            emailext body: 'Your Build is successful', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Build Status'
+            emailext body: 'Your Pipeline has completed', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Build Status'
         }
     }
 }
