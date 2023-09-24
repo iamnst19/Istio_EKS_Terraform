@@ -3,7 +3,7 @@ pipeline {
    parameters {
     choice(name: 'action', choices: 'create\ndestroy', description: 'Create/update or destroy the eks cluster.')
 	string(name: 'cluster', defaultValue : 'demo', description: "EKS cluster name;eg demo creates cluster named eks-demo.")
-	string(name: 'role', defaultValue : 'arn:aws:iam::992725313111:role/eks-admin', description: "IAM Role that auth with EKS cluste")
+	string(name: 'role', defaultValue : '<role-arn>/eks-admin', description: "IAM Role that auth with EKS cluste")
     choice(name: 'k8s_version', choices: '1.19\n1.18\n1.17', description: 'K8s version to install.')
     string(name: 'instance_type', defaultValue : 'm5.large', description: "k8s worker node instance type.")
     string(name: 'num_workers', defaultValue : '2', description: "k8s number of worker instances.")
