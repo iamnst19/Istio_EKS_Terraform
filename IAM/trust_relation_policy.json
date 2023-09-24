@@ -6,7 +6,7 @@
             "Action": [
                 "sts:AssumeRole"
             ],
-            "Resource": "arn:aws:iam::992725313111:role/eks-admin"
+            "Resource": "arn:aws:iam::99272531:role/eks-admin"
         }
     ]
 }
